@@ -177,7 +177,7 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  return arr.reduce( (total, person) => person.children === undefined ? total : total + person.children.length, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,7 +189,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce( (acc, num, idx) => {
+    acc[0] = idx + 1;
+    acc[1] = acc[1] + num;
+    return acc;
+  }, [0, 0]);
+  return newArr[1]/newArr[0];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -210,7 +215,7 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  return arr.reduce( (total, num) => isPrime(num) ? total + 1 : total, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -253,7 +258,12 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce( (save, obj) => {
+    if(save === null && obj.stat.name === statName) {
+      save = obj;
+    }
+    return save;
+  }, null);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -267,7 +277,15 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  let newArr = arr.filter( person => person.name.includes('a'));
+  console.log(newArr);
+  return newArr.reduce( (total, person) => {
+    if(person.children === undefined) {
+      return total;
+    } else {
+      return total.concat(person.children);
+    }
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -324,31 +342,31 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
