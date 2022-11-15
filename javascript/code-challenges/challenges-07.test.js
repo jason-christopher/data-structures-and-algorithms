@@ -169,8 +169,13 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  arr.forEach(val => (val % 2));
-  return arr;
+  for (let i = 0; i < arr.length; i) {
+    if(!(arr[i] % 2)) {
+      arr.splice(i, 1);
+    } else {
+      i++;
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,7 +194,11 @@ removeLastCharacters('Gregor', 9) returns ''
 ------------------------------------------------------------------------------------------------ */
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  let arr = str.split('');
+  arr.splice(-1, numberOfCharacters);
+  let newStr = arr.join('');
+  console.log(newStr);
+  return newStr;
 };
 
 
@@ -313,7 +322,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should shorten the string based on the first argument', () => {
     expect(removeLastCharacters('Gregor', 2)).toStrictEqual('Greg');
     expect(removeLastCharacters('Gregor', 2).length).toStrictEqual(4);
