@@ -113,10 +113,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let arr = str.split(' ').map(str => str.replace(/\W/g, ''));
-  return arr.filter(word => {
-    return /\b[A-Z]/g.test(word);
-  });
+  return str.match(/\b[A-Z][a-zA-Z]*/g)|| [];
 };
 
 /* ------------------------------------------------------------------------------------------------
