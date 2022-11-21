@@ -53,7 +53,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let newArr = [];
+  for (let i in input) {
+    for (let j in input[i]) {
+      newArr.push(input[i][j]);
+    }
+  }
+  return newArr.reduce((total, item) => total += item, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +75,15 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let newArr = [];
+  let finalArr = [];
+  for (let i = 0; i < input.length; i++) {
+    newArr.push(input[i].filter(item => typeof item === 'number' && !(item % 5)));
+  }
+  for (let i = 0; i < newArr.length; i++) {
+    finalArr.push(newArr[i].map(item => Math.pow(2, item)));
+  }
+  return finalArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +149,7 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(person => person.gender === 'male' || person.gender === 'female').reduce((str, person) => str === '' ? str = str + person.name : str = str + ` and ${person.name}`, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -145,7 +159,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortest, person) => parseInt(person.height) <= parseInt(shortest.height) ? {name: person.name, height: person.height} : {name: shortest.name, height: shortest.height}, {name: 'first', height: 300}).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
