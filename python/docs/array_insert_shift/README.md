@@ -8,6 +8,6 @@ Write a function called reverseArray which takes an array as an argument. Withou
 
 ## Approach & Efficiency
 
-I found the length of the input list and divided by 2 (rounding down using the // floor division operator) and saved the number to a variable called "location". Then I used the insert method to insert the given element into the given list at the index of "location". This modified the original list, so then I returned the modified list.
+I found the length of the input list and divided by 2 (rounding down using the // floor division operator) and saved the number to a variable called "location". Then I returned a new list that concatenated the first half of the input list, the input number, then the last half of the input list using ":"'s to divide the original list.
 
 Efficiency is O(1) for time since it will remain constant and O(N) for space since it will increase linearly.
