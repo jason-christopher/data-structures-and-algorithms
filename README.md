@@ -27,3 +27,4 @@ To run your tests
 - [Array Binary Search](./python/docs/array_binary_search/README.md)
 - [Linked List](./python/docs/linked_list/README.md)
 - [Linked List Insertions](./python/docs/linked_list_insertions/README.md)
+- [Linked List k-th](./python/docs/linked_list_kth/README.md)
