@@ -1,35 +1,34 @@
 class Node:
-    def __init__(self, value=None, nextval=None):
+    def __init__(self, value):
         self.value = value
-        self.next = nextval
+        self.next = None
 
 
 class LinkedList:
-
     def __init__(self):
         self.head = None
 
-    def __str__(self):
-        stringval = self.head
-        string_values = ""
-        while stringval is not None:
-            string_values += f"{{ {str(printval.dataval)} }} -> "
-            stringval = stringval.next
-        string_values += "NULL"
-        return string_values
-
     def insert(self, value):
-        new_node = Node(value)
-        new_node.next = self.head
-        self.head = new_node
+        self.val = Node(value)
+        self.val.next = self.head
+        self.head = self.val
 
     def includes(self, value):
         current = self.head
         while current is not None:
             if current.value == value:
                 return True
-            current = current.next
+        current = current.next
         return False
 
-    class TargetError:
-        pass
+    def __str__(self):
+        current = self.head
+        string = ""
+        while current is not None:
+            string += "{ " + str(current.value) + " } -> "
+            current = current.next
+        return string + "NULL"
+
+
+class TargetError:
+    pass
