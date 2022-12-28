@@ -58,6 +58,19 @@ class LinkedList:
         except Exception as e:
             raise TargetError(e)
 
+    def kth_from_end(self, k):
+        if k < 0:
+            raise TargetError()
+        current = self.head
+        ll_list = []
+        try:
+            while current is not None:
+                ll_list.append(current.value)
+                current = current.next
+            return ll_list[-k - 1]
+        except Exception as e:
+            raise TargetError(e)
+
 
 class TargetError(Exception):
     pass
