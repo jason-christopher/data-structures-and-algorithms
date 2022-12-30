@@ -35,8 +35,8 @@ Linked List
   * `__str__` returns the linked list as a string. It sets `current` equal to `self.head`, creates an emtpy `string` variable, and runs a `while` loop until `current` is equal to `None`. While `current` does not equal `None`, then the string is appended with `{ } ->` that contains the `current.value` inside the curly brackets. Once `current` equals `None`, `string` is appended with `NULL`. The `string` variable now contains all values of the linked list and ends with "NULL".
 
 Efficiency:
-* Time: O(n) - linear time since the `while` loop will run for the length of the original Linked List
-* Space: O(1) - constant space since the variables do not grow with the length of the Linked List
+* Time: O(n) - linear time since the `while` loop will run for the length of the original Linked List.
+* Space: O(1) - constant space since the variables do not grow with the length of the Linked List.
 
 ## Solution
 
