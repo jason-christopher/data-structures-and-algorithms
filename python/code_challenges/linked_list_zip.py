@@ -2,13 +2,12 @@ from data_structures.linked_list import LinkedList
 
 
 def zip_lists(a, b):
-    # check for one of the linked list to be empty and create a pointer for "current" and "start"
+    # if a.head exists, create a pointer for "current" and "start". If not, return a Linked List with b.head
     if a.head:
         cur = start = a.head
         a.head = a.head.next
     else:
-        cur = start = b.head
-        b.head = b.head.next
+        return LinkedList(b.head)
 
     # require both a.head and b.head to exist
     while a.head and b.head:
