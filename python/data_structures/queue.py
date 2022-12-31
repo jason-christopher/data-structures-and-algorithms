@@ -14,36 +14,28 @@ class Queue:
 
     def __init__(self):
         self.front = None
-        self.rear = None
-        self.queue = []
+        self.back = None
 
     def enqueue(self, value):
-        new_node = Node(value)
-        self.queue.append(new_node)
-        if self.rear is None:
-            self.front = new_node
-            self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
+        if self.back:
+            self.back.next = Node(value)
+            self.back = self.back.next
+            return
+        self.back = self.front = Node(value)
 
     def dequeue(self):
-        if self.is_empty():
-            return None
-        else:
-            value = self.queue.pop(0)
-            if self.is_empty():
-                self.front = None
-                self.rear = None
-            else:
-                self.front = self.queue[0]
-            return value.value
+        try:
+            dequeued = self.front
+            self.front = self.front.next
+            return dequeued.value
+        except Exception as e:
+            raise InvalidOperationError(e)
 
     def peek(self):
-        if self.is_empty():
-            return None
-        else:
+        try:
             return self.front.value
+        except Exception as e:
+            raise InvalidOperationError(e)
 
     def is_empty(self):
-        return len(self.queue) == 0
+        return self.front is None
