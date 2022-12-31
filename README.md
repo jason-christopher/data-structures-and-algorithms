@@ -29,3 +29,4 @@ To run your tests
 - [Linked List Insertions](./python/docs/linked_list_insertions/README.md)
 - [Linked List k-th](./python/docs/linked_list_kth/README.md)
 - [Linked List Zip](./python/docs/linked_list_zip/README.md)
+- [Stacks and Queues](./python/docs/stack_and_queue/README.md)
