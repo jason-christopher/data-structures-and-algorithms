@@ -1,12 +1,41 @@
+from data_structures.invalid_operation_error import InvalidOperationError
+
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+
 class Queue:
     """
     Put docstring here
     """
 
     def __init__(self):
-        # initialization here
-        pass
+        self.front = None
+        self.back = None
 
-    def some_method(self):
-        # method body here
-        pass
+    def enqueue(self, value):
+        if self.back:
+            self.back.next = Node(value)
+            self.back = self.back.next
+            return
+        self.back = self.front = Node(value)
+
+    def dequeue(self):
+        try:
+            dequeued = self.front
+            self.front = self.front.next
+            return dequeued.value
+        except Exception as e:
+            raise InvalidOperationError(e)
+
+    def peek(self):
+        try:
+            return self.front.value
+        except Exception as e:
+            raise InvalidOperationError(e)
+
+    def is_empty(self):
+        return self.front is None
