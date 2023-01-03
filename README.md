@@ -31,3 +31,4 @@ To run your tests
 - [Linked List Zip](./python/docs/linked_list_zip/README.md)
 - [Stacks and Queues](./python/docs/stack_and_queue/README.md)
 - [Stack/Queue Pseudo](./python/docs/stack_queue_pseudo/README.md)
+- [Stack/Queue Animal Shelter](./python/docs/stack_queue_animal_shelter/README.md)
