@@ -6,10 +6,6 @@ def multi_bracket_validation(string):
     for x in string:
         stack.push(x) if x in opened else None
         if x in closed:
-            if stack.is_empty():
+            if stack.is_empty() or opened.index(stack.pop()) != closed.index(x):
                 return False
-            if opened.index(stack.pop()) != closed.index(x):
-                return False
-    if stack.is_empty():
-        return True
-    return False
+    return stack.is_empty()
