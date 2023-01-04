@@ -13,5 +13,4 @@ def multi_bracket_validation(string):
                 return False
     if stack.is_empty():
         return True
-    else:
-        return False
+    return False
