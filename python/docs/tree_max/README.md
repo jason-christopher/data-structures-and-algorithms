@@ -20,7 +20,7 @@ Efficiency
 
 ## Solution
 
-The solution code is located in the `code_challenges/tree_max.py` file.
+The solution code is located in the `data_structures/binary_tree.py` file.
 
 1. Within the virtual environment, install pytest via `pip install pytest`.
 2. From the Python folder, run tests via `pytest tests/code_challenges/test_tree_max.py`.
