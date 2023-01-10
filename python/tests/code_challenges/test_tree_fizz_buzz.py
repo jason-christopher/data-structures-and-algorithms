@@ -64,6 +64,15 @@ def test_new_copy_returned(tree):
     assert actual == expected
 
 
+# @pytest.mark.skip("TODO")
+def test_empty_tree():
+    tree = KaryTree()
+    fizzy_tree = fizz_buzz_tree(tree)
+    actual = fizzy_tree.breadth_first()
+    expected = []
+    assert actual == expected
+
+
 @pytest.fixture
 def tree():
     one = Node(1)
