@@ -17,11 +17,14 @@ class Queue:
         self.back = None
 
     def enqueue(self, value):
+        new_node = Node(value)
+        if self.front is None:
+            self.front = new_node
         if self.back:
-            self.back.next = Node(value)
+            self.back.next = new_node
             self.back = self.back.next
-            return
-        self.back = self.front = Node(value)
+        else:
+            self.back = new_node
 
     def dequeue(self):
         try:

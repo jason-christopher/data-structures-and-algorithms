@@ -5,8 +5,6 @@ import copy
 def fizz_buzz_tree(tree):
 
     def fizz_buzz(root):
-        if not root:
-            return None
         if root.value % 3 == 0 and root.value % 5 == 0:
             root.value = "FizzBuzz"
         elif root.value % 3 == 0:
@@ -19,7 +17,7 @@ def fizz_buzz_tree(tree):
             fizz_buzz(child)
         return root
 
-    if not tree:
+    if not tree.root:
         return KaryTree()
     new_tree = copy.deepcopy(tree)
     new_tree.root = fizz_buzz(new_tree.root)
