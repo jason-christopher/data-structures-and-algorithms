@@ -22,6 +22,3 @@ def fizz_buzz_tree(tree):
     new_tree = copy.deepcopy(tree)
     new_tree.root = fizz_buzz(new_tree.root)
     return new_tree
-
-
-

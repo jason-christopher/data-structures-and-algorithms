@@ -18,17 +18,6 @@ class KaryTree:
                 queue.enqueue(child)
         return collection
 
-        # try:
-        #     result, queue = [], [self.root]
-        #     while queue:
-        #         front = queue.pop(0)
-        #         result.append(front.value)
-        #         for child in front.children:
-        #             queue.append(child)
-        #     return result
-        # except:
-        #     return []
-
 
 class Node:
     """K-Ary Tree Node"""

@@ -8,26 +8,24 @@ class Node:
 
 
 class Queue:
-    """
-    Put docstring here
-    """
 
     def __init__(self):
         self.front = None
         self.back = None
 
     def enqueue(self, value):
-        new_node = Node(value)
-        if self.front is None:
-            self.front = new_node
         if self.back:
-            self.back.next = new_node
+            self.back.next = Node(value)
             self.back = self.back.next
-        else:
-            self.back = new_node
+            return
+        self.back = self.front = Node(value)
 
     def dequeue(self):
         try:
+            if self.front == self.back:
+                dequeued = self.front
+                self.front = self.back = None
+                return dequeued.value
             dequeued = self.front
             self.front = self.front.next
             return dequeued.value
