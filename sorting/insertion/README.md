@@ -83,7 +83,7 @@ The outer `for` loop starts at index 1 (the second element) and iterates through
 
 The solution can be found at `python/code_challenges/insertion_sort.py`.
 
-A full set of tests can be found at `python/tests/code_challenges/test_insertion_sort.py`.
+Tests can be found at `python/tests/code_challenges/test_insertion_sort.py`.
 
 ## References / Tools
 
