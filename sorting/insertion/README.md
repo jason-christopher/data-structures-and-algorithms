@@ -20,7 +20,7 @@ def insertion_sort(list):
 
 ![Code Breakdown](insertion_sort_breakdown.png)
 
-## Trace
+## Walk-Through
 
 The outer `for` loop starts at index 1 (the second element) and iterates through the entire list. Here's a step-by-step explanation of how the algorithm works using the sample array `[8, 4, 23, 42, 16, 15]`:
 
