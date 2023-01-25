@@ -4,43 +4,98 @@ from code_challenges.sort_comparison import sort_by_title, sort_by_year
 
 # @pytest.mark.skip("TODO")
 def test_sort_by_title_exists():
-  assert sort_by_title
+    assert sort_by_title
 
 
 # @pytest.mark.skip("TODO")
 def test_sort_by_year_exists():
-  assert sort_by_year
+    assert sort_by_year
 
 
 # @pytest.mark.skip("TODO")
 def test_sort_by_year(movies):
-  actual = sort_by_year(movies)
-  expected = [{'title': 'An Ordinary Day', 'year': 2010}, {'title': 'Dodgeball', 'year': 2005}, {'title': "A Bug's Life", 'year': 1998}, {'title': 'The Apple', 'year': 1993}, {'title': 'Batman', 'year': 1989}]
-  assert actual == expected
+    actual = sort_by_year(movies)
+    expected = ["The Intouchables", "Valkyrie", "Stardust", "Ratatouille", "City of God", "Memento", "The Shawshank Redemption", "Beetlejuice", "Crocodile Dundee", "The Cotton Club"]
+    assert actual == expected
 
 
 # @pytest.mark.skip("TODO")
 def test_sort_by_title(movies):
-  actual = sort_by_title(movies)
-  expected = [{'title': 'The Apple', 'year': 1993}, {'title': 'Batman', 'year': 1989}, {'title': "A Bug's Life", 'year': 1998}, {'title': 'Dodgeball', 'year': 2005}, {'title': 'An Ordinary Day', 'year': 2010}]
-  assert actual == expected
+    actual = sort_by_title(movies)
+    expected = ["Beetlejuice", "City of God", "The Cotton Club", "Crocodile Dundee", "The Intouchables", "Memento", "Ratatouille", "The Shawshank Redemption", "Stardust", "Valkyrie"]
+    assert actual == expected
 
 
 # @pytest.mark.skip("TODO")
 def test_sort_by_year_empty():
-  actual = sort_by_year([])
-  expected = []
-  assert actual == expected
+    actual = sort_by_year([])
+    expected = []
+    assert actual == expected
 
 
 # @pytest.mark.skip("TODO")
 def test_sort_by_title_empty():
-  actual = sort_by_title([])
-  expected = []
-  assert actual == expected
+    actual = sort_by_title([])
+    expected = []
+    assert actual == expected
 
 
 @pytest.fixture
 def movies():
-  movie_list = [{'title': 'Batman', 'year': 1989}, {'title': "A Bug's Life", 'year': 1998}, {'title': 'Dodgeball', 'year': 2005}, {'title': 'The Apple', 'year': 1993}, {'title': 'An Ordinary Day', 'year': 2010}]
-  return movie_list
+    movie_list = [
+        {
+            "title": "Beetlejuice",
+            "year": 1988,
+            "genres": ["Comedy", "Fantasy"],
+        },
+        {
+            "title": "The Cotton Club",
+            "year": 1984,
+            "genres": ["Crime", "Drama", "Music"],
+        },
+        {
+            "title": "The Shawshank Redemption",
+            "year": 1994,
+            "genres": ["Crime", "Drama"],
+        },
+        {
+            "title": "Crocodile Dundee",
+            "year": 1986,
+
+            "genres": ["Adventure", "Comedy"],
+        },
+        {
+            "title": "Valkyrie",
+            "year": 2008,
+            "genres": ["Drama", "History", "Thriller"],
+        },
+        {
+            "title": "Ratatouille",
+            "year": 2007,
+            "genres": ["Animation", "Comedy", "Family"],
+        },
+        {
+            "title": "City of God",
+            "year": 2002,
+
+            "genres": ["Crime", "Drama"],
+        },
+        {
+            "title": "Memento",
+            "year": 2000,
+
+            "genres": ["Mystery", "Thriller"],
+        },
+        {
+            "title": "The Intouchables",
+            "year": 2011,
+
+            "genres": ["Biography", "Comedy", "Drama"],
+        },
+        {
+            "title": "Stardust",
+            "year": 2007,
+            "genres": ["Adventure", "Family", "Fantasy"],
+        },
+    ]
+    return movie_list
