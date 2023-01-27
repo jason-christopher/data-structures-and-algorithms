@@ -40,3 +40,4 @@ To run your tests
 - [Insertion Sort](./sorting/insertion/README.md)
 - [Merge Sort](./sorting/merge/README.md)
 - [Sort Comparison](./sorting/sort_comparison/README.md)
+- [Hash Tables](./python/docs/hashtable/README.md)
