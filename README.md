@@ -41,3 +41,4 @@ To run your tests
 - [Merge Sort](./sorting/merge/README.md)
 - [Sort Comparison](./sorting/sort_comparison/README.md)
 - [Hash Tables](./python/docs/hashtable/README.md)
+- [Hashmap Repeated Word](./python/docs/hashmap_repeated_word/README.md)
