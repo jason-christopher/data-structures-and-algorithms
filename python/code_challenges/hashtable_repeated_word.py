@@ -1,5 +1,11 @@
 from data_structures.hashtable import Hashtable
+import string
 
 
-def first_repeated_word():
-    pass
+def first_repeated_word(input):
+    words = [word.strip(string.punctuation).lower() for word in input.split()]
+    dict = Hashtable()
+    for word in words:
+        if dict.has(word.lower()):
+            return word.lower()
+        dict.set(word.lower(), None)
